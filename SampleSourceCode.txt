@@ -1,0 +1,9 @@
+CLASS Pgm1 {
+CONST A = 20, B = 45;
+VAR X, Y, Z;
+Y = 50;
+Z = 25;
+X = A + B * 18 - Y / Z;
+}
+
+
