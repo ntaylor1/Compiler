@@ -149,25 +149,7 @@ public class PDA {
 		else
 			return 1;
 		return -1;
-		/*
-		if(a.type.contentEquals("<var>"))
-		{
-			return 1;	
-		}
 		
-		if(a.type.contentEquals(""))
-		{
-			return 1;	
-		}
-		if(a.type.contentEquals("$lb"))
-		{
-			return 1;	
-		}
-		if(a.type.contentEquals("<var>"))
-		{
-			return 1;	
-		}
-		*/
 			
 				
 		
@@ -362,107 +344,7 @@ public class PDA {
 			
 			
 			
-				/*
-				current = t.getToken(x);
 				
-				
-				if(current.name.contentEquals("CONST"))
-				{
-					for(int i = x; i < t.getListSize() - 1; i++)
-					{
-						if(t.getToken(i).name.equals(";"))
-						{
-							x = i + 1;
-							break;
-						}
-					}
-				}
-				
-				if(current.name.equals(";"))
-				{
-					//break;
-					k++;
-					while(stack.size() > 1) {
-						
-						
-					q = new Quad(stack.get(stack.size()-2).name,stack.get(stack.size()-3).name,stack.get(stack.size()-1).name,"nop");
-					quadList.addQuad(q);
-					
-					stack.pop();
-					stack.pop();
-					stack.pop();
-					
-					
-					}
-					//if(k == 3) {
-						//break;}
-				}
-				
-				if(isOper(current))
-				{
-					//System.out.println("WORK" + x);
-					next = t.getToken(x+1);
-					prev = t.getToken(x-1);
-					
-					if(precedence(start,current) != 2)
-					{
-						if(!stack.peek().equals(prev))
-							stack.push(prev);
-						stack.push(current);
-						stack.push(next);
-						
-							
-					}
-					else
-					{
-						//System.out.println("REDUCE");
-						//q = new Quad(start.name,t.getToken(findTok(t,start) - 1).name,t.getToken(findTok(t,start) + 1).name,"T1");
-						q = new Quad(stack.get(stack.size()-2).name,stack.get(stack.size()-3).name,stack.get(stack.size()-1).name, getTemp());
-						//q.printQuad();
-						quadList.addQuad(q);
-						stack.pop();
-						stack.pop();
-						stack.pop();
-						stack.push(new Token(getTemp(),"$" + getTemp()));
-						stack.push(current);
-						stack.push(next);
-						if(t.getToken(x+2).name.equals(";"))
-						{
-							temp++;
-							q = new Quad(stack.get(stack.size()-2).name,stack.get(stack.size()-3).name,stack.get(stack.size()-1).name, getTemp());
-							quadList.addQuad(q);
-							//printStack();
-							stack.pop();
-							stack.pop();
-							stack.pop();
-							stack.push(new Token(getTemp(),"$" + getTemp()));
-						}
-						temp++;
-						ptemp++;
-						
-							
-					}
-						
-					
-					start = t.getToken(x);
-					//current = t.getToken(x);
-				
-						
-					
-				}
-				
-				
-				*/
-			}
-		
-			//printStack();
-			//quadList.printQuadList();
-			
-			
-			
-		
-	
-		//printStack();
 		quadList.printQuadList();
 		generateAssembly(quadList);
 		
@@ -554,18 +436,6 @@ public class PDA {
 			System.out.println(opstack.get(x).name);
 		}
 	}
-	
-	
-	//public int toInt(String op)
-	//{
-		
-	//}
-	
-	
-	
-	
-	
-	
 	
 	
 
