@@ -15,7 +15,7 @@ public class FSA {
 	     stateTable[14][0] = 15; stateTable[14][1] = 15; stateTable[14][2] = 15; stateTable[14][3] = 15; stateTable[14][4] = 16; stateTable[14][5] = 15; stateTable[14][6] = 15;
 	  }
 
-	  public FSA(int tabData[], int nrows, int ncols){  //User supplied credit policy.
+	  public FSA(int tabData[], int nrows, int ncols){  
 	    stateTable = new int[nrows][ncols];
 	    for(int row = 0; row < nrows; row++)
 		  for(int col = 0; col < ncols; col++) 
@@ -47,11 +47,7 @@ public class FSA {
 			  f5 = false; f3 = false;
 			  x = str.charAt(index);
 			  nextState = stateTable[0][toInt(x)];
-			 // System.out.println(nextState);
-			//  if(x == ' ')
-			//	  System.out.println("EMPTY SPACE");
-			//  else
-			//	  System.out.println(x);
+			 
 			  
 			  if(!(isSingleDelim(x).equals(" ")))
 			  {
@@ -68,37 +64,12 @@ public class FSA {
 				  }
 				  if(isSingleDelim(str.charAt(index+1)).equals(" ")) {
 					  d = new Token(str.substring(index,index+1),s);
-					 // if(str.substring(index,index+1).equals(" "))
-						//  System.out.println("EMPTY SPACE");
 					  list.addToken(d);
 					  //list.printTokens();
 				  }
 			  }  
 			  index++;
-			 /* if(nextState != 0)
-				  first = false;
-			  if(first == false && nextState != 0) 
-			  {
-				  start = index;
-				  for(int k = start; k < str.length(); k++)
-				  {
-					 
-					  if(str.charAt(k) == ' ' || str.charAt(k) == '{' || str.charAt(k) == '}' || str.charAt(k) == ',' || str.charAt(k) == ';')
-					  {
-						  if(str.charAt(k) == '}')
-							  finished = true;
-						  end = k;
-						  k = str.length();
-						  
-					  }	  
-				  }
-				  Token t = new Token(str.substring(start,end),str.substring(start,end));
-				  t.addToken(t);
-				  t.printTokens();
-				  
-				  break;
-			  }
-				*/  
+			 
 			  
 				  
 			  break;
@@ -124,11 +95,7 @@ public class FSA {
 				  index--;
 			  }
 			  
-			  //System.out.println(nextState);
-			 // if(x == ' ')
-			//	  System.out.println("EMPTY SPACE");
-			 // else
-				 // System.out.println(x);
+			  
 			  
 			  break;
 		  case 4: 
@@ -138,7 +105,7 @@ public class FSA {
 			  nextState = 0;
 			  i = new Token(str.substring(start,end),"<integer>");
 			  list.addToken(i);
-			//  list.printTokens();
+			
 			  break;
 		  case 5: 
 			  x = str.charAt(index);
@@ -154,10 +121,7 @@ public class FSA {
 				  index--;
 			  }
 			  
-			 // if(x == ' ')
-				//  System.out.println("EMPTY SPACE");
-			 // else
-				//  System.out.println(x);
+			
 			  break;
 		  case 6: 
 			  Token t = null;
@@ -231,14 +195,7 @@ public class FSA {
 		  case 11: finished = true; break;
 		  
 		  }
-		 // knt++;
-		 // if(knt > 125) {
-		//	  list.printTokens();
-			// // finished = true;
-		 // }
-			  
-		  //System.out.println();
-		  //System.out.println(nextState);
+		
 		  if(index == finalindex)
 			  finished = true;
 			
