@@ -252,38 +252,7 @@ public class SymbolTable {
 		}
 	}
 	
-	/*public int toInt(Token t)
-	  {
-		  if(c == ' ')
-			  return 6;
-		  if(c == '{')
-			  return 6;
-		  if(c == '=')
-			  return 6;
-		  if(c == ',')
-			  return 6;
-		  if(c == ';')
-			  return 6;
-		  if(c == '}')
-			  return 6;
-		  
-		  if(Character.isLetter(c) == true)
-			  return 0;
-		  if(Character.isDigit(c) == true)
-			  return 1;
-		  if(c == '*')
-			  return 2;
-		  if(c == '/')
-			  return 3;
-		  if(c == '=')
-			  return 4;
-		  if(c == '<')
-			  return 5;
-		  
-		  return 7;
-		  
-	  }
-	*/
+	
 
 }
 
