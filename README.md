@@ -1,1 +1,1 @@
-This project is an implementation of a compiler that translates a Java subset language into x86 assembly. Use the output of the lexical analyzer as the input to the syntax analyzer. The syntax analyzer will output usable assembly code. 
+This project is an implementation of a compiler that translates a Java subset language into x86 assembly. The source file will be used as input into the lexical analyzer, generates tokens for the syntax analyzer utilizing a finite state automata. Using a push down automata, the syntax analyzer will output executable assembly code. 
